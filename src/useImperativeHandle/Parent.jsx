@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import Child from './Child';
 
 function Parent() {
@@ -8,7 +8,7 @@ function Parent() {
   function onTriggerChild() {
     ChildRef.current.increase();
     timer = setTimeout(() => {
-      console.log("After, child's count is ", ChildRef.current.getCount());
+      console.log("After, child's count is ", ChildRef.current.count);
     }, 0);
   }
   useEffect(() => {
@@ -20,7 +20,7 @@ function Parent() {
     <fieldset>
       <legend>useImperativeHandle</legend>
       <button onClick={onTriggerChild}>trigger child +</button>
-      <Child onRef={ChildRef} />
+      <Child ref1={ChildRef} />
     </fieldset>
   );
 }

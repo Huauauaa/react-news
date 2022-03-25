@@ -1,13 +1,11 @@
 import { useImperativeHandle, useState } from 'react';
 
-function Child(props) {
+function Child({ ref1 }) {
   const [count, setCount] = useState(0);
-  useImperativeHandle(props.onRef, () => {
+  useImperativeHandle(ref1, () => {
     return {
       increase,
-      getCount() {
-        return count;
-      },
+      count,
     };
   });
   function increase() {

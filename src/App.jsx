@@ -6,6 +6,7 @@ import { default as UseImperativeHandle } from './useImperativeHandle/Parent'
 import { default as MemoDemo } from './memo/Parent'
 import HTMLCSSDemo from './demo/HTMLCSSDemo'
 import NeumorphismDemo from './pages/NeumorphismDemo'
+import PedroPage from './pedro/PedroPage'
 
 const StyledNav = styled('nav')`
   width: 100%;
@@ -21,6 +22,7 @@ function App() {
         <Link to="/UseImperativeHandle">UseImperativeHandle</Link>
         <Link to="/html-css">html css</Link>
         <Link to="/Neumorphism">玻璃拟态</Link>
+        <Link to="/pedro">pedro</Link>
       </StyledNav>
       <Routes>
         <Route path="BasicComponent" element={<BasicComponent />} />
@@ -28,6 +30,7 @@ function App() {
         <Route path="UseImperativeHandle" element={<UseImperativeHandle />} />
         <Route path="/html-css" element={<HTMLCSSDemo />} />
         <Route path="/Neumorphism" element={<NeumorphismDemo />} />
+        <Route path="/pedro" element={<PedroPage />} />
       </Routes>
     </>
   )

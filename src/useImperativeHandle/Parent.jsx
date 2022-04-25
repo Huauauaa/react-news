@@ -1,28 +1,30 @@
-import { useEffect, useRef, useCallback } from 'react';
-import Child from './Child';
+import { useEffect, useRef, useCallback } from 'react'
+import ButtonParent from './ButtonParent'
+import Child from './Child'
 
 function Parent() {
-  const ChildRef = useRef();
-  let timer;
+  const ChildRef = useRef()
+  let timer
 
   function onTriggerChild() {
-    ChildRef.current.increase();
+    ChildRef.current.increase()
     timer = setTimeout(() => {
-      console.log("After, child's count is ", ChildRef.current.count);
-    }, 0);
+      console.log("After, child's count is ", ChildRef.current.count)
+    }, 0)
   }
   useEffect(() => {
     return () => {
-      clearTimeout(timer);
-    };
-  });
+      clearTimeout(timer)
+    }
+  })
   return (
     <fieldset>
       <legend>useImperativeHandle</legend>
+      <ButtonParent></ButtonParent>
       <button onClick={onTriggerChild}>trigger child +</button>
       <Child ref1={ChildRef} />
     </fieldset>
-  );
+  )
 }
 
-export default Parent;
+export default Parent

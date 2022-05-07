@@ -1,45 +1,38 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import StyledApp from './App.styled';
+import Feature18 from './pages/Feature18';
+import HomePage from './pages/HomePage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation();
+  console.log(location);
 
+  const navs = [
+    { label: 'Home', path: '/' },
+    { label: 'React.js 18', path: '/feature-18' },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+    <StyledApp>
+      <nav>
+        {navs.map((item, index) => (
+          <Link
+            to={item.path}
+            key={index}
+            className={[location.pathname === item.path ? 'active' : ''].join(
+              ' ',
+            )}
           >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+            {item.label}
+          </Link>
+        ))}
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/feature-18" element={<Feature18 />} />
+        <Route path="*" element={<p>404</p>} />
+      </Routes>
+    </StyledApp>
+  );
 }
 
-export default App
+export default App;

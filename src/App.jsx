@@ -1,5 +1,6 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import StyledApp from './App.styled';
+import AntdPage from './pages/antd/AntdPage';
 import CSSPage from './pages/css/CSSPage';
 import ReactJsonView from './pages/demos/ReactJsonView';
 import ReactMarkdown from './pages/demos/ReactMarkdown';
@@ -16,6 +17,7 @@ function App() {
     { label: 'CSS', path: '/css' },
     { label: 'json', path: '/json' },
     { label: 'markdown', path: '/markdown' },
+    { label: 'antd', path: '/antd' },
   ];
   return (
     <StyledApp>
@@ -25,7 +27,7 @@ function App() {
             to={item.path}
             key={index}
             className={[location.pathname === item.path ? 'active' : ''].join(
-              ' '
+              ' ',
             )}
           >
             {item.label}
@@ -33,12 +35,13 @@ function App() {
         ))}
       </nav>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/feature-18' element={<Feature18 />} />
-        <Route path='/css' element={<CSSPage />} />
-        <Route path='/json' element={<ReactJsonView />} />
-        <Route path='/markdown' element={<ReactMarkdown />} />
-        <Route path='*' element={<p>404</p>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/feature-18" element={<Feature18 />} />
+        <Route path="/css" element={<CSSPage />} />
+        <Route path="/json" element={<ReactJsonView />} />
+        <Route path="/markdown" element={<ReactMarkdown />} />
+        <Route path="/antd" element={<AntdPage />} />
+        <Route path="*" element={<p>404</p>} />
       </Routes>
     </StyledApp>
   );

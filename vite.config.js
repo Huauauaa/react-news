@@ -6,5 +6,12 @@ export default () => {
   return defineConfig({
     base: './',
     plugins: [react()],
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
   });
 };

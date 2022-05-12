@@ -1,15 +1,15 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import varLetConst from './varLetConst.md?raw';
+import Es6 from './Es6';
+import es6 from './es6.md?raw';
 
 function ES6Page() {
   return (
-    <div>
-      <fieldset>
-        <Markdown remarkPlugins={[remarkGfm]} children={varLetConst} />
-      </fieldset>
-    </div>
+    <>
+      <Markdown remarkPlugins={[remarkGfm]} children={es6} />
+      <Es6 />
+    </>
   );
 }
 

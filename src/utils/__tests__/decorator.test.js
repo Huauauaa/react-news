@@ -1,4 +1,4 @@
-import { deprecate } from 'core-decorators';
+import { deprecate, autobind } from 'core-decorators';
 
 function strong(target) {
   target.AK = true;
@@ -8,6 +8,11 @@ function strong(target) {
 class Soldier {
   @deprecate
   test() {}
+
+  @autobind
+  getInstance() {
+    return this;
+  }
 }
 
 test('de', () => {
@@ -15,4 +20,5 @@ test('de', () => {
 
   const s = new Soldier();
   s.test();
+  expect(s.getInstance()).toBe(s);
 });

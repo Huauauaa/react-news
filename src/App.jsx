@@ -1,6 +1,7 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import StyledApp from './App.styled';
 import AntdPage from './pages/antd/AntdPage';
+import AxiosPage from './pages/AxiosPage';
 import CSSPage from './pages/css/CSSPage';
 import ReactJsonView from './pages/demos/ReactJsonView';
 import ReactMarkdown from './pages/demos/ReactMarkdown';
@@ -20,6 +21,7 @@ function App() {
     { label: 'markdown', path: '/markdown' },
     { label: 'antd', path: '/antd' },
     { label: 'es6', path: '/es6' },
+    { label: 'axios', path: '/axios' },
   ];
   return (
     <StyledApp>
@@ -44,6 +46,7 @@ function App() {
         <Route path="/markdown" element={<ReactMarkdown />} />
         <Route path="/antd" element={<AntdPage />} />
         <Route path="/es6" element={<ES6Page />} />
+        <Route path="/axios" element={<AxiosPage />} />
         <Route path="*" element={<p>404</p>} />
       </Routes>
     </StyledApp>

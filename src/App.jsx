@@ -6,6 +6,7 @@ import BasicPage from './pages/basic/BasicPage';
 import CSSPage from './pages/css/CSSPage';
 import ReactJsonView from './pages/demos/ReactJsonView';
 import ReactMarkdown from './pages/demos/ReactMarkdown';
+import MapDemo from './pages/echarts/MapDemo';
 import ES6Page from './pages/es6/ES6Page';
 import Feature18 from './pages/Feature18';
 import HomePage from './pages/HomePage';
@@ -24,6 +25,7 @@ function App() {
     { label: 'es6', path: '/es6' },
     { label: 'axios', path: '/axios' },
     { label: 'basic', path: '/basic' },
+    { label: 'map', path: '/map' },
   ];
   return (
     <StyledApp>
@@ -50,6 +52,7 @@ function App() {
         <Route path="/es6" element={<ES6Page />} />
         <Route path="/axios" element={<AxiosPage />} />
         <Route path="/basic" element={<BasicPage />} />
+        <Route path="/map" element={<MapDemo />} />
         <Route path="*" element={<p>404</p>} />
       </Routes>
     </StyledApp>

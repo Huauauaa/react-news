@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "jest",
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",

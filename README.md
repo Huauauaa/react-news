@@ -1,5 +1,4 @@
 # React.js
-gitthub
 
 ## Difference
 

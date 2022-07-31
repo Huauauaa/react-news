@@ -467,6 +467,7 @@ foo
 - \u4E0D\u53EF\u4EE5\u4F7F\u7528 arguments \u5BF9\u8C61\uFF0C\u8BE5\u5BF9\u8C61\u5728\u51FD\u6570\u4F53\u5185\u4E0D\u5B58\u5728\u3002\u5982\u679C\u8981\u7528\uFF0C\u53EF\u4EE5\u7528 rest \u53C2\u6570\u4EE3\u66FF
 - \u4E0D\u53EF\u4EE5\u4F7F\u7528 yield \u547D\u4EE4\uFF0C\u56E0\u6B64\u7BAD\u5934\u51FD\u6570\u4E0D\u80FD\u7528\u4F5C Generator \u51FD\u6570
 `;function eLe(){return Er(P1,{children:[ke(Of,{remarkPlugins:[Qy],children:JIe}),ke(QIe,{})]})}function tLe(){return ke("div",{children:"Feature18"})}var rLe=`# React.js
+gitthub
 
 ## Difference
 
